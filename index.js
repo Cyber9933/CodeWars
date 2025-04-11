@@ -267,3 +267,28 @@ function testEven(n) {
   return n%2===0;
 }
 
+
+function testEven(n) {
+  return n % 2 === 0 ? true : false;
+}
+
+console.log('-------Will you make it?----------');
+
+function zeroFuel(distanceToPump, mpg, fuelLeft) {
+  const maxDistance = mpg * fuelLeft;
+  
+  return maxDistance >= distanceToPump;
+}
+console.log(zeroFuel(2))
+
+
+/*
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+  return distanceToPump/mpg <= fuelLeft
+};
+
+
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+  return (mpg * fuelLeft) >= distanceToPump;
+};
+*/
