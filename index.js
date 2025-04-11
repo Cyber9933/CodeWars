@@ -240,3 +240,30 @@ console.log('-----------Switch it Up!--------');
   }[id]
 }
   */
+console.log('-------Is it even?----------');
+
+function testEven(n) {
+  let numb=0;
+    if(n===numb){
+      return true;
+      }else{
+        return false;
+      }
+}
+console.log(testEven(7));
+console.log(testEven(0));
+
+function isEven(n) {
+  // Check if the number has a decimal part
+  if (n % 1 !== 0) {
+    return false; // Floats with non-zero decimal parts are considered uneven
+  }
+  
+  // Check if the integer part is even
+  return n % 2 === 0;
+}
+
+function testEven(n) {
+  return n%2===0;
+}
+
