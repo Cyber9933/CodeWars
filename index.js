@@ -205,4 +205,21 @@ console.log('-----------Switch it Up!--------');
 
     // kiti trumpesni variantai:
 
+  /*
+  switchItUp=n=>["Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"][n]
+  */
+
+  function switchItUp(number){
+    let words = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
+    return words[number];
+  }
+  console.log((switchItUp(3)));
+
+
+  function getPlanetName(id){
+    let name=['','Mercury', 'Venus','Earth', 'Mars','Jupiter','Saturn','Uranus','Neptune'];
     
+    return name[id];
+  }
+  console.log(getPlanetName(3));
+  
