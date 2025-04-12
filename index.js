@@ -292,3 +292,60 @@ const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
   return (mpg * fuelLeft) >= distanceToPump;
 };
 */
+
+console.log('-------All Star Code Challenge #18----------');
+
+
+
+function countLetters(str) {
+  // Sukuriame objektą raidžių skaičiavimui
+  let counts = {};
+  
+  // Pereiname per kiekvieną raidę
+  for (let i = 0; i < str.length; i++) {
+    let letter = str[i].toLowerCase(); // Konvertuojame į mažąsias raides
+    
+    // Jei raidė jau yra mūsų skaičiuoklėje, padidiname jos skaičių
+    if (counts[letter]) {
+      counts[letter]++;
+    } else {
+      // Jei dar ne, pridedame ją ir nustatome skaičių 1
+      counts[letter] = 1;
+    }
+  }
+  
+  return counts;
+}
+
+console.log(countLetters('e'));
+function countLetters(str){
+  let count={};
+  for (let i=0; i<str.length; i++){
+    let letter=str[i].toLowerCase();
+    if(count[letter]){
+      count[letter]++;
+      
+    }else{
+      count[letter]=1;
+    }
+  }
+  return count;
+}
+
+console.log("-------You Can't Code Under Pressure #1----------");
+
+function doubleInteger(i) {
+
+  return i*2;
+}
+
+//pvz
+const doubleInteger = i => 2 * i;
+
+function doubleInteger(i) {
+  // i will be an integer. Double it and return it.
+  return i+i;
+}
+
+const doubleInteger = i => i*2
+
