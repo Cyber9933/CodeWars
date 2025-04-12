@@ -61,6 +61,14 @@ console.log(Math.floor(6.7));
 console.log(Math.floor(3));
 console.log(Math.floor(5));
 
+function litres(time) {
+  return Math.floor(time/2);
+}
+
+function litres(time) {
+  return parseInt(time/2);
+}
+
 console.log('*********magNumber**********');
 
 //eina karys per gatve ir sauna 3 kartus. kareivis turi viena is ginklu
@@ -339,7 +347,7 @@ function doubleInteger(i) {
   return i*2;
 }
 
-//pvz
+/*//pvz
 const doubleInteger = i => 2 * i;
 
 function doubleInteger(i) {
@@ -349,3 +357,4 @@ function doubleInteger(i) {
 
 const doubleInteger = i => i*2
 
+*/
