@@ -358,3 +358,30 @@ function doubleInteger(i) {
 const doubleInteger = i => i*2
 
 */
+
+
+console.log("-------Area or Perimeter----------");
+
+
+const areaOrPerimeter= function(l , w) {
+  if (l===w){
+    return l*w;
+  }else{
+    return 2*(l+w);
+  }
+};
+
+
+//pvz
+const areaOrPerimeter1 = function(l , w) {
+  return l == w ? l*w : 2*(l + w)
+};
+
+
+console.log("-------Century From Year----------");
+
+function century(year) {
+  return Math.ceil(year / 100);
+ };
+   
+console.log(century(1956));
