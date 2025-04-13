@@ -385,3 +385,92 @@ function century(year) {
  };
    
 console.log(century(1956));
+
+
+//pvz
+
+function century(year) {
+  return (year + 99) / 100 | 0;
+}
+
+
+function century(year) {
+  if (year <= 100){
+    return 1;
+  }
+
+  let cen = parseInt(year / 100);
+  let rem = year % 100;
+  
+  return rem === 0 ? cen : cen + 1;
+}
+
+
+function century(year) {
+  return Math.floor((year-1)/100)+1;
+}
+
+
+console.log("-------Add Length----------");
+let str=''
+function addLength(str) {
+  return str+str.length
+  }
+  
+
+  console.log(addLength('apple ban'));
+  
+  
+  function addLength(str) {
+    // Skaidome eilutę į žodžius
+    const words = str.split(' ');
+    
+    // Sukuriame tuščią masyvą rezultatams
+    const result = [];
+    
+    // Einame per kiekvieną žodį
+    for (let i = 0; i < words.length; i++) {
+      const word = words[i];
+      // Sukuriame naują eilutę su žodžiu ir jo ilgiu
+      const wordWithLength = word + ' ' + word.length;
+      // Pridedame į rezultatų masyvą
+      result.push(wordWithLength);
+    }
+    
+    return result;
+  }
+
+
+  // pvz
+
+  function addLength(str) {
+    return str.split(' ').map(word => word + ' ' + word.length)
+  }
+
+
+  console.log("-------Add Length----------");
+
+  function greet()
+{ 
+  return "hello world!";
+}
+
+//pvz
+
+const greet1 = () => "hello world!";
+
+console.log("-------Simple multiplication----------");
+
+function simpleMultiplication(number) {
+  
+  if (number %2===0){
+      return number *8;
+      }else {
+        
+    return number *9;
+}
+};
+console.log(simpleMultiplication(8));
+
+
+//pvz
