@@ -505,6 +505,78 @@ function addFive(num) {
 
 const addFive3 = (num) => num + 5
 
-console.log("-------Grasshopper - Basic Function Fixer----------");
+console.log("-------Polishish NEPATEIKTA----------");
 
 
+function correctPolishLetters(string) {
+  const polishLetters = {
+    'ą': 'a',
+    'ć': 'c',
+    'ę': 'e',
+    'ł': 'l',
+    'ń': 'n',
+    'ó': 'o',
+    'ś': 's',
+    'ź': 'z',
+    'ż': 'z'
+  };
+  
+  let result = '';
+  
+  for (let i = 0; i < string.length; i++) {
+    const char = string[i];
+    if (polishLetters.hasOwnProperty(char)) {
+      result += polishLetters[char];
+    } else {
+      result += char;
+    }
+  }
+  
+  return result;
+}
+console.log(correctPolishLetters("Jędrzej Błądziński"));
+
+
+console.log("-------Is he gonna survive?----------");
+function hero(bullets, dragons){
+  return bullets >= dragons * 2
+}
+
+console.log(hero(5));
+
+
+//pvz
+function hero(bullets, dragons){
+  //Get Coding!
+  return (bullets / 2 >= dragons) ? true : false;
+  }
+
+  hero = (bullets, dragons) =>{
+    if (bullets/2 >= dragons) {
+      return true;
+    }
+    else {
+      return false;
+    }
+    }
+
+
+    console.log("-------Difference of Volumes of Cuboids----------");
+    function findDifference(a, b) {
+      
+      const volumeA = a[0]*a[1]*a[2];
+      
+      
+      const volumeB = b[0] * b[1] * b[2];
+      
+     
+      return Math.abs(volumeA-volumeB) ;
+    }
+    console.log( findDifference([2, 2, 3], [5, 4, 1]));
+  
+
+    // pvz
+
+    findDifference = (a, b) => Math.abs(a[0] * a[1] * a[2] - b[0] * b[1] * b[2]);
+
+    console.log("-------Difference of Volumes of Cuboids----------");
