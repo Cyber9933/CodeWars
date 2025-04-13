@@ -474,3 +474,37 @@ console.log(simpleMultiplication(8));
 
 
 //pvz
+function simpleMultiplication1(n) {
+  return n * (n % 2 ? 9 : 8);
+}
+
+const simpleMultiplication2 = number =>
+  (8 + number % 2) * number;
+
+console.log("-------Grasshopper - Basic Function Fixer----------");
+
+
+
+function addFive(num) {
+ 
+   return num+5;
+ };
+
+ console.log(addFive(10));
+ 
+
+ //pvz
+
+ const addFive1 = n => n + 5;
+
+ function addFive2(num) {
+  let total = num + 5;
+  return total;
+}
+
+
+const addFive3 = (num) => num + 5
+
+console.log("-------Grasshopper - Basic Function Fixer----------");
+
+
