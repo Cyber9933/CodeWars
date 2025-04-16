@@ -579,4 +579,103 @@ function hero(bullets, dragons){
 
     findDifference = (a, b) => Math.abs(a[0] * a[1] * a[2] - b[0] * b[1] * b[2]);
 
-    console.log("-----------------");
+    console.log("--------Get Planet Name By ID-------");
+
+    function getPlanetName(id){
+      let name='';
+      switch(id){
+        case 1:
+          name = 'Mercury'
+          break;
+        case 2:
+          name = 'Venus'
+          break;
+        case 3:
+          name = 'Earth'
+          break;
+        case 4:
+          name = 'Mars'
+          break;
+        case 5:
+          name = 'Jupiter'
+          break;
+        case 6:
+          name = 'Saturn'
+          break;
+        case 7:
+          name = 'Uranus'
+          break;
+        case 8:
+          name = 'Neptune'
+          break;
+          default:
+           
+      }
+       return name;
+      
+    }
+
+    function getPlanetName(id){   //su objektais
+      return {
+        1: 'Mercury',
+        2: 'Venus',
+        3: 'Earth',
+        4: 'Mars',
+        5: 'Jupiter',
+        6: 'Saturn',
+        7: 'Uranus',
+        8: 'Neptune'
+      }[id]
+    }
+
+    const getPlanetName1 = id => ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'][id-1]
+
+
+
+    console.log(getPlanetName(2), 'Venus');
+    console.log(getPlanetName(5), 'Jupiter');
+    console.log(getPlanetName(3), 'Earth');
+    console.log(getPlanetName1(3), 'Earth');
+
+
+
+    console.log("--------You only need one - Beginner-------");
+
+    
+
+    /*You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
+
+a can contain numbers or strings. x can be either.
+
+Return true if the array contains the value, false if not.*/
+
+    function check(a,x){
+      return a.includes(x);
+    }
+    const check1 = (a,x) => a.includes(x);
+
+    function check(a,x){
+      return a.indexOf(x) > -1 ? true : false;
+    };
+
+    function check(a,x){
+      return a.indexOf(x) > -1;
+    };
+    const check2 = (a, x) => a.some(item => item === x);
+
+    function check(a,x){
+      let result = false;
+      for(i = 0; i < a.length; i++){
+        if(a[i]==x){
+        result  = true;
+        }
+       
+      }
+      return result;
+    };
+
+    console.log(check([66, 101], 66), true);
+    console.log(check([101, 45, 75, 105, 99, 107], 107), true);
+    console.log(check(['t', 'e', 's', 't'], 'e'), true);
+    console.log(check(['what', 'a', 'great', 'kata'], 'kat'), false);
+    console.log(check2(['what', 'a', 'great', 'kata'], 'kat'), false);
