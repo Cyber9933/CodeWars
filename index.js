@@ -641,7 +641,7 @@ function hero(bullets, dragons){
 
     console.log("--------You only need one - Beginner-------");
 
-    
+
 
     /*You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
 
@@ -652,17 +652,19 @@ Return true if the array contains the value, false if not.*/
     function check(a,x){
       return a.includes(x);
     }
+    //
     const check1 = (a,x) => a.includes(x);
-
+    //
     function check(a,x){
       return a.indexOf(x) > -1 ? true : false;
     };
-
+    //
     function check(a,x){
       return a.indexOf(x) > -1;
     };
+    //
     const check2 = (a, x) => a.some(item => item === x);
-
+    //
     function check(a,x){
       let result = false;
       for(i = 0; i < a.length; i++){
@@ -679,3 +681,164 @@ Return true if the array contains the value, false if not.*/
     console.log(check(['t', 'e', 's', 't'], 'e'), true);
     console.log(check(['what', 'a', 'great', 'kata'], 'kat'), false);
     console.log(check2(['what', 'a', 'great', 'kata'], 'kat'), false);
+
+
+    console.log("--------Sum of positive-------");
+
+    /*Task
+You get an array of numbers, return the sum of all of the positives ones.
+
+Example
+[1, -4, 7, 12] => 1+7+12=20
+*/
+
+
+function positiveSum(arr) {
+  return arr
+        .filter(n=>n>=0)
+        .reduce((total,n)=>total+n,0)
+  
+}
+
+//
+
+function positiveSum(arr) {
+  let total = 0;    
+  for (i = 0; i < arr.length; i++) {    // setup loop to go through array of given length
+    if (arr[i] > 0) {                   // if arr[i] is greater than zero
+      total += arr[i];                  // add arr[i] to total
+    }
+  }
+  return total;                         // return total
+}
+
+
+//
+function positiveSum(arr) {
+  return arr.reduce((a,b)=> a + (b > 0 ? b : 0),0);     // a-total, b- kiti like skaiciai, panaudotas ternary
+}
+
+//
+
+function positiveSum(arr) {
+  let sum = 0;
+  
+  for (n of arr) {
+    if (n > 0) sum += n;
+  }
+  
+  return sum;
+}
+
+    console.log(positiveSum([1,2,3,4,5]),15);
+    console.log(positiveSum([1,-2,3,4,5]),13);
+    console.log(positiveSum([]),0);
+    console.log(positiveSum([-1,-2,-3,-4,-5]),0);
+    console.log(positiveSum([-1,2,3,4,-5]),9);
+
+
+    console.log("--------SpeedCode #2 - Array Madness-------");
+//https://www.codewars.com/kata/56ff6a70e1a63ccdfa0001b1
+
+  /*Given two integer arrays a, b, both of length >= 1, create a program that returns true if the sum of the squares of each element in a is strictly greater than the sum of the cubes of each element in b.
+
+E.g.
+
+arrayMadness([4, 5, 6], [1, 2, 3]); // returns true since 4 ** 2 + 5 ** 2 + 6 ** 2 > 1 ** 3 + 2 ** 3 + 3 ** 3  */
+
+
+function arrayMadness(a,b){
+  let sum1=0;
+  for(const n of a){
+    sum1 +=n**2;
+  }
+  let sum2=0;
+  for(const n of b) {
+    sum2+=n**3;
+  }
+  return sum1>sum2
+}
+
+//
+
+const arrayMadness1 = (a, b) => a.reduce((acc, x) => acc + x**2, 0) > b.reduce((acc, x) => acc + x**3, 0)
+
+
+//
+
+const pow = (arr, exp) => arr.reduce((res,el) => res += el ** exp, 0);
+const arrayMadness3 = (a, b) => pow(a, 2) > pow(b, 3);
+
+
+//
+
+const arrayMadness2 = (A, b) => A.map(e => e**2).reduce((e,c) => e + c) > b.map(e => e**3).reduce((e,c) => e + c)
+
+   console.log(arrayMadness([4,5,6],[1,2,3]), true);
+   console.log(arrayMadness([5,6,7],[4,5,6]), false);
+   console.log(arrayMadness([4,5,6],[3,4,5]), false);
+   console.log(arrayMadness([3,4,5],[2,3,4]), false);
+   console.log(arrayMadness([2,3,4],[1,2,3]), false);
+   console.log(arrayMadness([1,2,3],[0,1,2]), true);
+   console.log(arrayMadness([5,3,2,4,1],[15]), false);
+   console.log(arrayMadness([2,5,3,4,1],[3,3,3,3,3]), false);
+   console.log(arrayMadness([1,3,5,2,4],[2,2,2,2,2,2,2,1]), false);
+   console.log(arrayMadness([1,2,3,4,5],[2,2,2,2,2,2,1,1,1]), true);
+   console.log(arrayMadness([2,4,6,8,10,12,14],[1,3,5,7,9,11,13]), false);
+   console.log(arrayMadness3([2,4,6,8,10,12,14],[1,3,5,7,9,11,13]), false);
+
+
+   console.log("--------Polish alphabet-------");
+
+   /*
+ą -> a,
+ć -> c,
+ę -> e,
+ł -> l,
+ń -> n,
+ó -> o,
+ś -> s,
+ź -> z,
+ż -> z
+"Jędrzej Błądziński"  -->  "Jedrzej Bladzinski" */
+
+function correctPolishLetters (string) {
+      return string
+        .replaceAll('ą', 'a')
+        .replaceAll('ć', 'c')
+        .replaceAll('ę', 'e')
+        .replaceAll('ł', 'l')
+        .replaceAll('ń', 'n')
+        .replaceAll('ó', 'o')
+        .replaceAll('ś', 's')
+        .replaceAll('ź', 'z')
+        .replaceAll('ż', 'z')
+        
+    }
+
+    //
+
+    function correctPolishLetters(s) {
+      return s.replace(/[ąćęłńóśźż]/g, c => "acelnoszz"["ąćęłńóśźż".indexOf(c)])
+    }
+
+    //
+    let polishLetters = {
+      "ą": "a",
+      "ć": "c",
+      "ę": "e",
+      "ł": "l",
+      "ń": "n",
+      "ó": "o",
+      "ś": "s",
+      "ź": "z",
+      "ż": "z",
+  };
+  
+  function correctPolishLetters (string) {
+    return string.split('').map((c) => polishLetters[c] || c).join("");
+  }
+
+    console.log(correctPolishLetters("Jędrzej Błądziński"), "Jedrzej Bladzinski");
+    console.log(correctPolishLetters("Lech Wałęsa"), "Lech Walesa");
+    console.log(correctPolishLetters("Maria Skłodowska-Curie"), "Maria Sklodowska-Curie");
