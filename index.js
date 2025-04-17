@@ -1026,8 +1026,11 @@ Note: You can expect all of the inputs to be the same length.
 */
 
 function tripleTrouble(one, two, three){
-  return one.split("").map((_, i) => one[i] + two[i] + three[i]).join("");
+  return one.split("").map((s, i) => one[i] + two[i] + three[i]).join("");
  }
+
+ const marks=[10,2,8,4,6];
+ let
 //
 
 function tripleTrouble(one, two, three) {
@@ -1037,6 +1040,14 @@ function tripleTrouble(one, two, three) {
   }
   return result;
 }
+
+//
+function tripleTrouble(one, two, three){
+  return one.replace(/./g,(v,i)=>v+two[i]+three[i])
+ }
+
+
+ //
 
  console.log(tripleTrouble("aaa","bbb","ccc"), "abcabcabc");
     console.log(tripleTrouble("aaaaaa","bbbbbb","cccccc"), "abcabcabcabcabcabc");
