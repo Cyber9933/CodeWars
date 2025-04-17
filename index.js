@@ -299,17 +299,18 @@ function zeroFuel(distanceToPump, mpg, fuelLeft) {
 console.log(zeroFuel(2))
 
 
-/*
-const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+
+const zeroFuel1 = (distanceToPump, mpg, fuelLeft) => {
   return distanceToPump/mpg <= fuelLeft
 };
 
 
-const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+const zeroFuel2 = (distanceToPump, mpg, fuelLeft) => {
   return (mpg * fuelLeft) >= distanceToPump;
 };
-*/
 
+console.log(zeroFuel(50,25,2), true);
+console.log(zeroFuel(100,50,1), false);
 console.log('-------All Star Code Challenge #18----------');
 
 
@@ -373,11 +374,11 @@ function strCount(str, l){
 
  //
  function strCount(str, letter) {
-  let arr = str.split('');
+  
   const indices = []; //jei pusshini i masyva, privalo buti constanta
-  for (let i = 0; i < arr.length; i++) {
-      if (arr[i] === letter) {
-          indices.push(i)
+  for (let i = 0; i < str.length; i++) {
+      if (str[i] === letter) {
+          indices.push(i); //pridedame i masyva
       }
   }
   return indices.length;
@@ -892,3 +893,36 @@ function correctPolishLetters (string) {
     console.log(correctPolishLetters("Jędrzej Błądziński"), "Jedrzej Bladzinski");
     console.log(correctPolishLetters("Lech Wałęsa"), "Lech Walesa");
     console.log(correctPolishLetters("Maria Skłodowska-Curie"), "Maria Sklodowska-Curie");
+
+
+
+    console.log("--------Find the Difference in Age between Oldest and Youngest Family Members-------");
+
+    function differenceInAges(ages){
+      const min=Math.min(...ages);
+      const max=Math.max(...ages);
+      const diff=max-min;
+
+      return [min, max, diff];
+    }
+    
+// maziau efektyvus
+    function differenceInAges(ages){
+      return [Math.min(...ages),Math.max(...ages),Math.max(...ages)-Math.min(...ages)]
+    }
+
+    //
+
+    const differenceInAges1 = a => (min = Math.min(...a),max = Math.max(...a),[min,max,max-min])
+
+    //
+
+    function differenceInAges(ages){
+      let x = ages.sort((a,b) => a - b)[0]
+      let y = ages.sort((a,b) => a - b)[ages.length - 1]
+      return [x, y, y - x]
+    }
+
+    console.log(differenceInAges([82, 15, 6, 38, 35]), [6, 82, 76]);
+    console.log(differenceInAges([57, 99, 14, 32]), [14, 99, 85]);
+    console.log(differenceInAges1([57, 99, 14, 5]), [14, 99, 75]);
