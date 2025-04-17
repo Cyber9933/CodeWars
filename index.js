@@ -398,17 +398,17 @@ function doubleInteger(i) {
   return i*2;
 }
 
-/*//pvz
-const doubleInteger = i => 2 * i;
+//pvz
+const doubleInteger1 = i => 2 * i;
 
 function doubleInteger(i) {
   // i will be an integer. Double it and return it.
   return i+i;
 }
 
-const doubleInteger = i => i*2
+const doubleInteger2 = i => i*2
 
-*/
+
 
 
 console.log("-------Area or Perimeter----------");
@@ -923,6 +923,123 @@ function correctPolishLetters (string) {
       return [x, y, y - x]
     }
 
+
+    //
+
+    function differenceInAges(ages){
+
+      ages = ages.sort((a,b) => a -b);
+      
+      let youngest = ages[0];
+      let oldest = ages.pop(); //istrina POP paskutini nari, bet tuo paciu ji ir pasiima
+      
+      
+      return new Array(youngest, oldest, (oldest-youngest));
+      }
+
+
     console.log(differenceInAges([82, 15, 6, 38, 35]), [6, 82, 76]);
     console.log(differenceInAges([57, 99, 14, 32]), [14, 99, 85]);
     console.log(differenceInAges1([57, 99, 14, 5]), [14, 99, 75]);
+
+
+    console.log("--------L1: Bartender, drinks!-------");
+
+
+    /*Input	Output
+"Jabroni"	"Patron Tequila"
+"School Counselor"	"Anything with Alcohol"
+"Programmer"	"Hipster Craft Beer"
+"Bike Gang Member"	"Moonshine"
+"Politician"	"Your tax dollars"
+"Rapper"	"Cristal"
+anything else	"Beer"
+*/
+
+function getDrinkByProfession(param){
+  const pro=param.toLowerCase();
+  if(pro==="jabroni"){
+    return "Patron Tequila";  
+  }
+  if(pro==="school counselor"){
+    return "Anything with Alcohol";
+  }
+  if(pro==="programmer"){
+    return "Hipster Craft Beer";
+  }   
+  if(pro==="bike gang member"){
+    return "Moonshine";
+  }
+  if(pro==="politician"){
+    return "Your tax dollars";
+  }
+  if(pro==="rapper"){
+    return "Cristal"; 
+  }
+  return "Beer";
+}
+
+//
+
+const drinks1 = {
+  "jabroni": "Patron Tequila",
+  "school counselor": "Anything with Alcohol",
+  "programmer": "Hipster Craft Beer",
+  "bike gang member": "Moonshine",
+  "politician": "Your tax dollars",
+  "rapper": "Cristal"
+}
+
+const getDrinkByProfession1 = profession => drinks1[profession.toLowerCase()] || "Beer";
+
+//
+function getDrinkByProfession(param) {
+  param = param.toLowerCase()
+  let professions = ["jabroni", "school counselor", "programmer", "bike gang member", "politician", "rapper"];
+  let drinks = ["Patron Tequila", "Anything with Alcohol", "Hipster Craft Beer", "Moonshine", "Your tax dollars", "Cristal","Beer"];
+ 
+  for (var i = 0; i < professions.length; i++) {
+      if (param == professions[i]) {
+          return drinks[i];
+      }
+  } 
+  return drinks[drinks.length-1];
+}
+
+//
+
+    console.log(getDrinkByProfession("jabrOni"), "Patron Tequila");
+    console.log(getDrinkByProfession("scHOOl counselor"), "Anything with Alcohol");
+    console.log(getDrinkByProfession("prOgramMer"), "Hipster Craft Beer");
+    console.log(getDrinkByProfession("bike ganG member"), "Moonshine");
+    console.log(getDrinkByProfession("poLiTiCian"), "Your tax dollars");
+    console.log(getDrinkByProfession("rapper"), "Cristal");
+    console.log(getDrinkByProfession("pundit"), "Beer");
+    console.log(getDrinkByProfession("Pug"), "Beer");
+
+
+    console.log("--------Triple Trouble-------");
+
+    /*E.g. Input: "aa", "bb" , "cc" => Output: "abcabc"
+
+Note: You can expect all of the inputs to be the same length.
+*/
+
+function tripleTrouble(one, two, three){
+  return one.split("").map((_, i) => one[i] + two[i] + three[i]).join("");
+ }
+//
+
+function tripleTrouble(one, two, three) {
+  let result = '';
+  for (let i = 0; i < one.length; i++) {
+    result += one[i] + two[i] + three[i];
+  }
+  return result;
+}
+
+ console.log(tripleTrouble("aaa","bbb","ccc"), "abcabcabc");
+    console.log(tripleTrouble("aaaaaa","bbbbbb","cccccc"), "abcabcabcabcabcabc");
+    console.log(tripleTrouble("burn", "reds", "roll"), "brrueordlnsl");
+    console.log(tripleTrouble("Sea","urn","pms"), "Supermans"); 
+    console.log(tripleTrouble("LLh","euo","xtr"), "LexLuthor");
