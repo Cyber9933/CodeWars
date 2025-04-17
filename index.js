@@ -280,6 +280,15 @@ function testEven(n) {
   return n % 2 === 0 ? true : false;
 }
 
+
+console.log(testEven(0), true, "testEven for 0");
+console.log(testEven(0.5), false, "testEven for 0.5");
+console.log(testEven(1), false, "testEven for 1");
+console.log(testEven(2), true, "testEven for 2");
+console.log(testEven(-4), true, "testEven for 2");
+
+
+
 console.log('-------Will you make it?----------');
 
 function zeroFuel(distanceToPump, mpg, fuelLeft) {
@@ -305,7 +314,7 @@ console.log('-------All Star Code Challenge #18----------');
 
 
 
-function countLetters(str) {
+function strCount(str) {
   // Sukuriame objektą raidžių skaičiavimui
   let counts = {};
   
@@ -325,8 +334,9 @@ function countLetters(str) {
   return counts;
 }
 
-console.log(countLetters('e'));
-function countLetters(str){
+console.log(strCount('e'));
+
+function strCount(str){
   let count={};
   for (let i=0; i<str.length; i++){
     let letter=str[i].toLowerCase();
@@ -339,6 +349,46 @@ function countLetters(str){
   }
   return count;
 }
+//
+
+function strCount(str,letter) {
+  return str.split(letter).length - 1;
+  
+}
+
+//
+function strCount(str, letter){  
+  return str.split('').filter(c => c == letter).length;
+}
+//
+
+const strCount1 = (str, letter) =>  
+  --str.split(letter).length;
+//
+function strCount(str, l){ 
+  const a = str.split('').map(x => x.replace(l,'')).join('');
+   return str.length- a.length;
+ }
+
+
+ //
+ function strCount(str, letter) {
+  let arr = str.split('');
+  const indices = []; //jei pusshini i masyva, privalo buti constanta
+  for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === letter) {
+          indices.push(i)
+      }
+  }
+  return indices.length;
+}
+
+
+    console.log(strCount('Hello', 'o'), 1);
+    console.log(strCount('Hello', 'l'), 2);
+    console.log(strCount('',      'z'), 0);
+    console.log(strCount('vasara','a'), 3);
+
 
 console.log("-------You Can't Code Under Pressure #1----------");
 
@@ -835,9 +885,9 @@ function correctPolishLetters (string) {
       "ż": "z",
   };
   
-  function correctPolishLetters (string) {
+  /*function correctPolishLetters (string) {
     return string.split('').map((c) => polishLetters[c] || c).join("");
-  }
+  }*/
 
     console.log(correctPolishLetters("Jędrzej Błądziński"), "Jedrzej Bladzinski");
     console.log(correctPolishLetters("Lech Wałęsa"), "Lech Walesa");
