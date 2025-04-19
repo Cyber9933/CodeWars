@@ -1069,3 +1069,21 @@ console.log("--------Grasshopper - If/else syntax debug-------");
 
     console.log(checkAlive(5), true)
     console.log(checkAlive(0), false)
+
+
+    //
+
+    function checkAlive(health) {
+      return health > 0;
+    }
+
+    //
+
+
+    const checkAlive1 = (health) => health > 0
+
+    //
+    const checkAlive2= h => h > 0;
+
+
+    
