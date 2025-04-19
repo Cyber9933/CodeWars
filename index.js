@@ -1030,7 +1030,7 @@ function tripleTrouble(one, two, three){
  }
 
  const marks=[10,2,8,4,6];
- let
+ 
 //
 
 function tripleTrouble(one, two, three) {
@@ -1054,3 +1054,18 @@ function tripleTrouble(one, two, three){
     console.log(tripleTrouble("burn", "reds", "roll"), "brrueordlnsl");
     console.log(tripleTrouble("Sea","urn","pms"), "Supermans"); 
     console.log(tripleTrouble("LLh","euo","xtr"), "LexLuthor");
+
+console.log("--------Grasshopper - If/else syntax debug-------");
+
+
+    function checkAlive (health) {
+      if (health < 1) {
+        
+        return false
+      } else  {
+        return true
+      }
+    }
+
+    console.log(checkAlive(5), true)
+    console.log(checkAlive(0), false)
