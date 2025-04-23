@@ -1086,4 +1086,83 @@ console.log("--------Grasshopper - If/else syntax debug-------");
     const checkAlive2= h => h > 0;
 
 
+    console.log('-----------Will there be enough space?----------');
     
+    
+
+    function enough(cap, on, wait) {
+
+      const availableSeats = cap - on;
+      
+      if (availableSeats >= wait) {
+        return 0;
+      } else {
+        return wait - availableSeats;
+      }
+    }
+
+    console.log(enough(10, 5, 5), 0);
+    console.log(enough(100, 60, 50), 10);
+    console.log(enough(20, 5, 5), 0);
+    
+
+    ///
+
+    function enough(cap, on, wait) {
+      return Math.max(wait + on - cap, 0);
+    }
+
+    //
+
+    function enough(cap, on, wait) {
+      return (on+wait > cap) ? on+wait-cap : 0;
+    }
+    //
+
+    const enough1 = (cap, on, wait) => Math.max(0,wait-cap+on);
+
+
+
+    console.log('-----------Super Duper Easy----------');
+
+
+    function problem(x) {
+      if (typeof x === "string") {
+        return "Error";
+      }
+      return x * 50 + 6;
+    }
+
+
+    //
+
+    const problem1 = x => typeof x === 'string' ? 'Error' : x * 50 + 6;
+
+
+    //
+    function problem(x){
+      return typeof x === "number" ? x * 50 + 6 : "Error";
+    }
+
+    //
+
+    const problem2 = x =>
+      Number.isFinite(x) ? x * 50 + 6 : `Error`;
+
+    //
+
+    function problem(x){
+      let sum = x * 50 + 6;
+      if(x > 0 || x < 0 || x === 0)
+      return sum
+      else {
+      return "Error"
+    }
+    }
+
+    console.log(problem("hello"), "Error");
+    console.log(problem(1), 56);
+    console.log(problem(5), 256);
+    console.log(problem(0), 6);
+    console.log(problem(1.2), 66);
+    console.log(problem(3), 156);
