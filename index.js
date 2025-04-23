@@ -1166,3 +1166,59 @@ console.log("--------Grasshopper - If/else syntax debug-------");
     console.log(problem(0), 6);
     console.log(problem(1.2), 66);
     console.log(problem(3), 156);
+
+
+    console.log('-----------Capitalization and Mutability----------');
+
+    function capitalizeWord(word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }
+
+    //
+    const capitalizeWord1 = (word) => word.replace(word.charAt(0), word.charAt(0).toUpperCase());
+
+    //
+
+    function capitalizeWord(word) {
+      const first = word[0].toUpperCase()
+      return first + word.slice(1)
+      
+    }
+
+    //
+    const capitalizeWord2 = w => `${w[0].toUpperCase()}${w.slice(1)}`;
+
+    console.log(capitalizeWord('word'), 'Word');
+    console.log(capitalizeWord('i'), 'I');
+    console.log(capitalizeWord('glasswear'), 'Glasswear');
+
+console.log('-----------Contamination #1 -String-----------');
+
+
+    function contamination(text, char){
+      if (text === '') {
+        return '';
+      }
+      return char.repeat(text.length);
+    }
+
+    function contamination(text, char){
+      return text.replace(/./g, char);
+    }
+    //
+    function contamination(text, char){
+      return text.split('').map(() => char).join('');
+      
+    }
+    //
+    function contamination(text, char){
+      return text.split('').map(() => char).join('');
+    }
+
+    
+
+    console.log(contamination("abc","z"), "zzz")
+    console.log(contamination("","z"), "")
+    console.log(contamination("abc",""), "")
+    console.log(contamination("_3ebzgh4","&"), "&&&&&&&&")
+    console.log(contamination("//case"," "), "      ")
